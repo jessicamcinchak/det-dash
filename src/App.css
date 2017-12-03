@@ -7,3 +7,8 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.metric-container {
+  border: 1px solid #cacccd;
+  margin: 20px;
+}

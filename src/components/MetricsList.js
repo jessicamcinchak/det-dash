@@ -6,7 +6,8 @@ const metrics = [
     key: 'bldgPermit',
     label: 'Number of permits issued: ',
     api4x4: 'but4-ky7y',
-    dateCol: 'permit_issued'
+    dateCol: 'permit_issued',
+    source: 'https://data.detroitmi.gov/resource/xw2a-a7tf'
   },
   {
     title: 'Improve Detroit',
@@ -18,7 +19,7 @@ const metrics = [
   {
     title: '911 Calls for Service',
     key: 'nineOneOne',
-    label: 'Average response time: ',
+    label: 'Number of calls: ',
     api4x4: 'dvu3-6qvr',
     dateCol: 'call_timestamp'
   }
@@ -27,6 +28,12 @@ const metrics = [
 class MetricsList extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      bldgPermit: [],
+      improveDet: [],
+      nineOneOne: []
+    };
   }
 
   // loads data for default time span
@@ -53,6 +60,7 @@ class MetricsList extends Component {
         .then(response => response.json())
         .then(d => {
           console.log(d);
+          this.setState({ [`${metrics[i].key}`]: d.length });
         })
     }
   }
@@ -60,7 +68,13 @@ class MetricsList extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.start} through {this.props.end}</p>
+        {metrics.map((metric) => 
+          <div key={metric.key} className="metric-container">
+            <h2 className="metric-header">{metric.title}</h2>
+            <p className="metric">{metric.label} {this.state[metric.key]}</p>
+            <p className="metric-source-link"><a href={metric.source} target="_blank">(source)</a></p>
+          </div>
+        )}
       </div>
     )
   }
