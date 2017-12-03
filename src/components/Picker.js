@@ -36,7 +36,7 @@ class Picker extends Component {
           block={false}
         />
         { this.state.startDate && this.state.endDate ? 
-          <MetricsList start={this.state.startDate.format('MM-DD-YYYY')} end={this.state.endDate.format('MM-DD-YYYY')} /> : <p>Please select a date range.</p> }
+          <MetricsList start={this.state.startDate.format('YYYY-MM-DD')} end={this.state.endDate.format('YYYY-MM-DD')} /> : <p>Please select a date range.</p> }
       </div>
     );
   }
