@@ -22,9 +22,9 @@ class Picker extends Component {
     return (
       <div>
         <DateRangePicker
-          startDateId={'start'}
+          startDateId="startDate"
           startDate={this.state.startDate}
-          endDateId={'end'}
+          endDateId="endDate"
           endDate={this.state.endDate}
           onDatesChange={({ startDate, endDate }) => { this.setState({ startDate, endDate })}}
           focusedInput={this.state.focusedInput}
