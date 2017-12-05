@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import numeral from 'numeral';
+import PropTypes from 'prop-types';
 
-class Metric extends Component {
+class DataPoints extends Component {
   render() {
     return (
       <div>
@@ -17,4 +18,13 @@ class Metric extends Component {
   }
 }
 
-export default Metric;
+export default DataPoints;
+
+DataPoints.propTypes = {
+  meta: PropTypes.array.isRequired,
+  permits: PropTypes.array.isRequired,
+  scf: PropTypes.array.isRequired,
+  cad: PropTypes.array.isRequired,
+  demo: PropTypes.array.isRequired,
+  bvn: PropTypes.array.isRequired,
+};
