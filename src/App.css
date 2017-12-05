@@ -3,12 +3,28 @@
   text-align: center;
 }
 
+.DateRangePickerInput__withBorder {
+  padding-right: 25px;
+}
+
 .DateRangePickerInput_arrow_svg {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 25px;
 }
 
 .metric-container {
   border: 1px solid #cacccd;
+  border-left: 10px solid #279989;
   margin: 20px;
+}
+
+a {
+  color: #565a5c;
+  text-decoration: none;
+  border-bottom: 2px solid #66e2da;
+}
+
+a:hover {
+  color: black;
+  border-bottom: solid 2px #279989;
 }

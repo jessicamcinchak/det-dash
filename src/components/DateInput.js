@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import '../App.css';
 
 class DateInput extends Component {
   render() {
@@ -23,6 +24,7 @@ class DateInput extends Component {
           numberOfMonths={2}
           showClearDates={false}
           block={false}
+          orientation="vertical"
         />
       </div>
     )

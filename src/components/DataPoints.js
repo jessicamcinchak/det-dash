@@ -10,7 +10,7 @@ class DataPoints extends Component {
         {this.props.meta.map((metric) => 
           <div key={metric.key} className="metric-container">
             <h2 className="metric-header">{metric.title}</h2>
-            <p className="metric">{metric.label} {numeral(_.valuesIn(this.props[metric.key][0])).format('0,0')}</p>
+            <p className="metric">{metric.label} <strong>{numeral(_.valuesIn(this.props[metric.key][0])).format('0,0')}</strong></p>
             <p className="metric-source-link"><a href={metric.source} target="_blank">(source)</a></p>
           </div>
         )}
