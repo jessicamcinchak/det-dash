@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import numeral from 'numeral';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 
 class DataPoints extends Component {
@@ -9,7 +10,7 @@ class DataPoints extends Component {
         {this.props.meta.map((metric) => 
           <div key={metric.key} className="metric-container">
             <h2 className="metric-header">{metric.title}</h2>
-            <p className="metric">{metric.label} {numeral(this.props[metric.key].length).format('0,0')}</p>
+            <p className="metric">{metric.label} {numeral(_.valuesIn(this.props[metric.key][0])).format('0,0')}</p>
             <p className="metric-source-link"><a href={metric.source} target="_blank">(source)</a></p>
           </div>
         )}
@@ -17,8 +18,6 @@ class DataPoints extends Component {
     )
   }
 }
-
-export default DataPoints;
 
 DataPoints.propTypes = {
   meta: PropTypes.array.isRequired,
@@ -28,3 +27,5 @@ DataPoints.propTypes = {
   demo: PropTypes.array.isRequired,
   bvn: PropTypes.array.isRequired,
 };
+
+export default DataPoints;
