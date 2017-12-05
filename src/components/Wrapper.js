@@ -69,8 +69,10 @@ class Wrapper extends Component {
   }
 
   handleDatesChange({ startDate, endDate }) {
-    this.getDataInRange(startDate, endDate);
-    this.setState({ startDate, endDate });
+    if (startDate && endDate) {
+      this.getDataInRange(startDate, endDate);
+      this.setState({ startDate, endDate });
+    }
   }
 
   handleFocusChange(focusedInput) {

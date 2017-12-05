@@ -20,7 +20,7 @@ class DateInput extends Component {
           isOutsideRange={() => false}
           minimumNights={0}
           numberOfMonths={2}
-          showClearDates={true}
+          showClearDates={false}
           block={false}
         />
       </div>
