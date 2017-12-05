@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { DateRangePicker } from 'react-dates';
+import { DateRangePicker, isInclusivelyAfterDay } from 'react-dates';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
@@ -17,7 +18,7 @@ class DateInput extends Component {
           onDatesChange={this.props.onDatesChange}
           focusedInput={this.props.focus}
           onFocusChange={this.props.onFocusChange}
-          isOutsideRange={() => false}
+          isOutsideRange={day => isInclusivelyAfterDay(day, moment().add(1, 'day'))}
           minimumNights={0}
           numberOfMonths={2}
           showClearDates={false}
@@ -28,8 +29,6 @@ class DateInput extends Component {
   }
 }
 
-export default DateInput;
-
 DateInput.propTypes = {
   start: PropTypes.object.isRequired,
   end: PropTypes.object.isRequired,
@@ -37,3 +36,5 @@ DateInput.propTypes = {
   onDatesChange: PropTypes.func.isRequired,
   onFocusChange: PropTypes.func,
 };
+
+export default DateInput;
