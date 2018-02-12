@@ -21,5 +21,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://cityofdetroit.github.io/det-dash"
+  "homepage": "https://jessicamcinchak.github.io/det-dash"
 }
