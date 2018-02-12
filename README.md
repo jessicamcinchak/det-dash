@@ -1,6 +1,6 @@
 # det-dash
 
-Redesigning that monthly jpeg file with live data connections from our open data portal.
+Redesigning that monthly jpeg file found at [detroitmi.gov/Detroit-Dashboard](http://www.detroitmi.gov/Detroit-Dashboard) with live data connections from our open data portal.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

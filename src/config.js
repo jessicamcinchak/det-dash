@@ -12,10 +12,10 @@ const metrics = [
     title: 'Improve Detroit',
     key: 'scf',
     label: 'Number of issues submitted: ',
-    dateCol: 'ticket_created_date_time',
-    params: '$select=count(ticket_created_date_time)',
-    resKey: 'count_ticket_created_date_time',
-    source: 'https://data.detroitmi.gov/resource/j7tb-epek'
+    dateCol: 'created_at',
+    params: '$select=count(created_at)',
+    resKey: 'count_created_at',
+    source: 'https://data.detroitmi.gov/resource/a9kb-mhiu'
   },
   {
     title: '911 Calls for Service',
